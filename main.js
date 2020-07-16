@@ -55,8 +55,9 @@ function handleClick(event) {
             topDisk.removeAttribute('class')
             currentTower.append(topDisk)
 
-            isActiveTower = false
         }
+        isActiveTower = false
+        topDisk.removeAttribute('class')
 
         console.log(topDisk)
         console.log(targetDiskWidth)
