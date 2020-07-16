@@ -34,12 +34,13 @@ let sourceDiskWidth
 let targetDiskWidth
 let currentTower
 let diskCount
+
 function handleClick(event) {
     currentTower = event.currentTarget
     diskCount = currentTower.childElementCount
 
     if (isActiveTower === false && diskCount === 0) {
-        console.log('select a tower with disks')
+        alert('Select a tower with disks')
     } else if (isActiveTower === false) {
         topDisk = currentTower.lastElementChild
         topDisk.setAttribute('class', 'highlight')
@@ -54,7 +55,6 @@ function handleClick(event) {
         if (sourceDiskWidth < targetDiskWidth) {
             topDisk.removeAttribute('class')
             currentTower.append(topDisk)
-
         }
         isActiveTower = false
         topDisk.removeAttribute('class')
@@ -65,6 +65,12 @@ function handleClick(event) {
     } else if (isActiveTower === true && diskCount === 0) {
         topDisk.removeAttribute('class')
         currentTower.append(topDisk)
+        isActiveTower = false
+    }
+
+    if (endTower.childElementCount === 4) {
+        alert('GOOD JOB!')
+        sourceTower.append(disk1, disk2, disk3, disk4)
         isActiveTower = false
     }
 
