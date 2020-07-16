@@ -49,18 +49,22 @@ function handleClick(event) {
         console.log(topDisk)
         console.log(sourceDiskWidth)
         console.log(isActiveTower)
-    } else if (isActiveTower === true && diskCount === 0) {
-        // targetDiskWidth = currentTower.lastElementChild.clientWidth
-        topDisk.removeAttribute('class')
-        currentTower.append(topDisk)
-        // if (sourceDiskWidth < targetDiskWidth) {
+    } else if (isActiveTower === true && diskCount > 0) {
+        targetDiskWidth = currentTower.lastElementChild.clientWidth
+        if (sourceDiskWidth < targetDiskWidth) {
+            topDisk.removeAttribute('class')
+            currentTower.append(topDisk)
 
-        // }
-        isActiveTower = false
+            isActiveTower = false
+        }
 
         console.log(topDisk)
-        console.log(diskWidth)
+        console.log(targetDiskWidth)
         console.log(isActiveTower)
+    } else if (isActiveTower === true && diskCount === 0) {
+        topDisk.removeAttribute('class')
+        currentTower.append(topDisk)
+        isActiveTower = false
     }
 
 
